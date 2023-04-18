@@ -1,44 +1,61 @@
-
+//Get data from local storage
 export const getLocalStorageData = () => {
   const storageValue = localStorage.getItem("todo_list");
-  if (storageValue && storageValue !== undefined){
-    const lstg_data = localStorage.getItem('todo_list');
-    return lstg_data && JSON.parse(lstg_data)
+  if (storageValue && storageValue !== undefined) {
+    const localStorage_data = localStorage.getItem("todo_list");
+    return localStorage_data && JSON.parse(localStorage_data);
+  } else {
+    return [];
   }
-  else{
-    return []
-  }
-} 
+};
 
+//Sets data in local storage
 export const addDataInLocalStorage = (user_inputs) => {
-    localStorage.setItem('todo_list',JSON.stringify(user_inputs));
-} 
+  localStorage.setItem("todo_list", JSON.stringify(user_inputs));
+};
 
+//Edit data in local storage
 export const editDataInLocalStorage = (id, task) => {
-  let data = JSON.parse(localStorage.getItem("todo_list"))
-  /* let edit_data = data.filter((item) => item.id===id)
-  edit_data.map((item)=>{
-    item.title = task
-  item.editing = false
-  })
-  data.concat(edit_data)
-  localStorage.setItem('todo_list',JSON.stringify(data)) */
-  
-  localStorage.setItem('todo_list',
-    JSON.stringify(data.map((todo) => todo.id === id ? {
-         ...todo,title:task, editing: !todo.editing
-    }: todo)
-))
-}
+  let localStorage_data = JSON.parse(localStorage.getItem("todo_list"));
+  localStorage.setItem(
+    "todo_list",
+    JSON.stringify(
+      localStorage_data.map((todo) =>
+        todo.id === id
+          ? {
+              ...todo,
+              title: task,
+              editing: !todo.editing,
+            }
+          : todo
+      )
+    )
+  );
+};
 
+//Delete data in local storage
 export const deleteDataInLocalStorage = (id) => {
-    let data = JSON.parse(localStorage.getItem("todo_list"))
-    localStorage.setItem('todo_list',JSON.stringify(data.filter(todo=>todo.id!==id)));
-}
+  let localStorage_data = JSON.parse(localStorage.getItem("todo_list"));
+  localStorage.setItem(
+    "todo_list",
+    JSON.stringify(localStorage_data.filter((todo) => todo.id !== id))
+  );
+};
 
+//Set completed task in local storage
 export const completeTodoInLocalStorage = (id) => {
-  let data = JSON.parse(localStorage.getItem("todo_list"))
-  localStorage.setItem('todo_list',JSON.stringify(data.map(todo => todo.id === id ? {
-    ...todo, completed : !todo.completed} : todo)
-))
-}
+  let localStorage_data = JSON.parse(localStorage.getItem("todo_list"));
+  localStorage.setItem(
+    "todo_list",
+    JSON.stringify(
+      localStorage_data.map((todo) =>
+        todo.id === id
+          ? {
+              ...todo,
+              completed: !todo.completed,
+            }
+          : todo
+      )
+    )
+  );
+};

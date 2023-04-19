@@ -119,32 +119,33 @@ export const Todo = () => {
       >
         <Header />
         <TodoForm addToDo={addToDo} />
-        {todos.length === 0 && "Nothing to do!"}
+        {todos.length === 0 && (
+          <p className="mb-10 text-warning">"Nothing to do!"</p>
+        )}
         <Filters
           todos={todos}
           setActiveTab={setActiveTab}
           activeTab={activeTab}
           handleTabChange={handleTabChange}
         />
-        {filtredtodos.length < 1
-          ? "No tasks found!"
-          : filtredtodos.map((todo) =>
-              todo.editing ? (
-                <EditTodoForm
-                  task={todo}
-                  updateTask={updateTask}
-                  key={todo.id}
-                />
-              ) : (
-                <TodoList
-                  task={todo}
-                  key={todo.id}
-                  completeTodo={completeTodo}
-                  deleteTodo={deleteTodo}
-                  editTask={editTask}
-                />
-              )
-            )}
+        {filtredtodos.length < 1 ? (
+          <p className="mt-2 text-warning">"No tasks found!"</p>
+        ) : (
+          filtredtodos.map((todo) =>
+            todo.editing ? (
+              <EditTodoForm task={todo} updateTask={updateTask} key={todo.id} />
+            ) : (
+              <TodoList
+                task={todo}
+                key={todo.id}
+                completeTodo={completeTodo}
+                deleteTodo={deleteTodo}
+                editTask={editTask}
+              />
+            )
+          )
+        )}
+
         <Footer todos={filtredtodos} />
       </Container>
     </>

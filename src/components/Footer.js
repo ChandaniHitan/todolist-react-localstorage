@@ -17,10 +17,10 @@ export const Footer = ({ todos }) => {
 
   return (
     <div
-      className="mt-3 p-4 d-flex fst-italic fs-6"
-      style={{ backgroundColor: "#98D8AA", color: "White" }}
+      className=""
+      style={{ backgroundColor: "#98D8AA", color: "White"}}
     >
-      <Row>
+      <Row className="mt-3 p-4 d-flex fst-italic fs-6">
         <span>Remaining tasks: {todos.length - counter}</span>
         <span>Completed tasks: {counter}</span>
       </Row>

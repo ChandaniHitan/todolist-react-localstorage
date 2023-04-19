@@ -12,12 +12,12 @@ import {
 
 export const TodoList = ({ task, completeTodo, deleteTodo, editTask }) => {
   return (
-    <>
+    <div>
       <ListGroup>
         <ListGroup.Item variant="success" className="shadow mb-1">
           <Container fluid="md">
             <Row>
-              <Col xs={12} md={6} className="">
+              <Col xs={12} md={6}>
                 <p
                   onDoubleClick={() => editTask(task.id)}
                   style={{
@@ -60,6 +60,6 @@ export const TodoList = ({ task, completeTodo, deleteTodo, editTask }) => {
           </Container>
         </ListGroup.Item>
       </ListGroup>
-    </>
+    </div>
   );
 };

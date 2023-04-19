@@ -6,7 +6,11 @@ export const Filters = ({ activeTab, handleTabChange }) => {
   return (
     <>
       <Container>
-        <Nav defaultActiveKey="all" variant="tabs" className="">
+        <Nav
+          defaultActiveKey="all"
+          variant="tabs"
+          className="flex-column flex-sm-row"
+        >
           <Nav.Item>
             <Nav.Link
               eventKey="all"

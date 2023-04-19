@@ -5,7 +5,7 @@ import Image from "react-bootstrap/Image";
 
 export const Header = () => {
   return (
-    <Navbar bg="warning" variant="light" expand="lg" className="mb-3 shadow">
+    <Navbar bg="warning" variant="light" expand="lg" className="mb-3 shadow rounded">
       <Container>
         <Navbar.Brand href="#home">
           <Image

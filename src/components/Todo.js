@@ -22,10 +22,12 @@ export const Todo = () => {
   useEffect(() => {
     const localStorage_data = getLocalStorageData();
     setTodos(...todos, localStorage_data);
+    // eslint-disable-next-line
   }, []);
 
   useEffect(() => {
     filteredTodos();
+    // eslint-disable-next-line
   }, [todos]);
 
   const addToDo = (todo) => {

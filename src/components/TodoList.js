@@ -12,9 +12,9 @@ import {
 
 export const TodoList = ({ task, completeTodo, deleteTodo, editTask }) => {
   return (
-    <div>
+    <>
       <ListGroup>
-        <ListGroup.Item variant="success" className="shadow mb-1">
+        <ListGroup.Item variant="success" className="list-item shadow mb-1">
           <Container fluid="md">
             <Row>
               <Col xs={12} md={6}>
@@ -37,19 +37,19 @@ export const TodoList = ({ task, completeTodo, deleteTodo, editTask }) => {
               <Col xs={12} md={2}>
                 <div className="d-flex justify-content-center">
                   <FontAwesomeIcon
-                    className="px-2"
+                    className="my-btn px-2"
                     icon={faPenToSquare}
                     onClick={() => editTask(task.id)}
                     style={{ color: "#FFC10B" }}
                   />
                   <FontAwesomeIcon
-                    className="px-2"
+                    className="my-btn px-2"
                     icon={faCheckCircle}
                     onClick={() => completeTodo(task.id)}
                     style={{ color: "#198754" }}
                   />
                   <FontAwesomeIcon
-                    className="px-2"
+                    className="delete-btn px-2"
                     icon={faTrash}
                     onClick={() => deleteTodo(task.id)}
                     style={{ color: "#DC3546" }}
@@ -60,6 +60,6 @@ export const TodoList = ({ task, completeTodo, deleteTodo, editTask }) => {
           </Container>
         </ListGroup.Item>
       </ListGroup>
-    </div>
+    </>
   );
 };

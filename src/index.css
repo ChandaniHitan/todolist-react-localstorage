@@ -1,0 +1,15 @@
+.list-item:hover {
+    background-color: #e4f5ec;
+    transition: all 0.3s ease-in-out;
+    outline: 1px solid #99c6a6;
+}
+
+.delete-btn:hover {
+    transition: all 0.3s ease-in-out;
+    transform: rotate(180deg);
+}
+
+.my-btn:hover {
+    transform: scale(1.2);
+}
+

@@ -115,7 +115,7 @@ export const Todo = () => {
     <>
       <Container
         fluid
-        className="p-5 my-5 border rounded container-md bg-light.bg-gradient"
+        className="p-5 my-5 border rounded container-md min-vh-100"
       >
         <Header />
         <TodoForm addToDo={addToDo} />

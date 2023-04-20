@@ -148,7 +148,7 @@ export const Todo = () => {
           )
         )}
 
-        <Footer todos={filtredtodos} />
+        <Footer todos={todos} />
       </Container>
     </>
   );
